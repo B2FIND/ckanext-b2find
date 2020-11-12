@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Revision history
+    2020-11-11  XSD definition for B2FIND schema v2.0
+    TODO: check and/or define namespace for xmlns
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://b2find.eudat.eu/schema" targetNamespace="http://b2find.eudat.eu/schema" attributeFormDefault="unqualified" elementFormDefault="qualified" xml:lang="EN">
+
+  <!-- General information -->
+  <xs:element name="community" type="xs:string" minOccurs="1" maxOccurs="1">
+    <xs:annotation>
+      <xs:documentation>The scientific community, Research Infrastructure, Project or Data provider from which B2FIND harvests the metadata.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="titles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>A name or title by which a resource is known.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="descriptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>All additional information that does not fit in any of the other categories. May be used for technical information. It is a best practice to supply a description.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="keywords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="keyword" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Subject, keyword, classification code, or key phrase describing the resource. Could be free text.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Identifier -->
+  <xs:element name="DOI" type="xs:anyURI" minOccurs="0" maxOccurs="1">
+    <xs:annotation>
+      <xs:documentation>A persistent, citable identifier that uniquely identifies a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="PID" type="xs:anyURI" minOccurs="0" maxOccurs="1">
+    <xs:annotation>
+      <xs:documentation>A persistent identifier that uniquely identifies a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="PID" type="xs:anyURI" minOccurs="0" maxOccurs="1">
+    <xs:annotation>
+      <xs:documentation>An identifier that uniquely identifies a resource. It may link to the data itself or a landing page that curates the data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="relatedIdentifiers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="relatedIdentifier" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Identifiers of related resources.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="metadataAccess" type="xs:anyURI" minOccurs="1" maxOccurs="1">
+    <xs:annotation>
+      <xs:documentation>Is a link to the originally harvested metadata record.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+<!-- Provenance Information -->
+<xs:element name="creators">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="creator" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>The main researchers involved working on the data, or the authors of the publication in priority order. May be a corporate/institutional or personal name.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="publishers">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="publisher" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>The name of the entity that holds, archives, publishes prints, distributes, releases, issues, or produces the resource. This property will be used to formulate the citation, so consider the prominence of the role.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="contributors">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="contributor" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="instruments">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="instrument" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>The technical instrument(s) used to generate (observe or measure) the data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="publicationYear" type="xs:date" minOccurs="1" maxOccurs="1">
+  <xs:annotation>
+    <xs:documentation>Year when the data is made publicly available. If an embargo period has been in effect, use the date when the embargo period ends.</xs:documentation>
+  </xs:annotation>
+</xs:element>
+
+<xs:element name="fundingReferences">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="fundingReference" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Information about financial support (funding) for the resource.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="rightsList">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="rights" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Any rights information for this resource.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="openAccess" type="xs:boolean" minOccurs="1" maxOccurs="1">
+  <xs:annotation>
+    <xs:documentation>Information on whether the resource is openly accessible or not.</xs:documentation>
+  </xs:annotation>
+</xs:element>
+
+<xs:element name="contacts">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="contact" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>A reference to contact information.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<!-- Representation Information -->
+<xs:element name="languages">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="language" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Language(s) of the resource.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="resourceTypes">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="resourceType" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>The type(s) of the resource. Free text values allowed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="formats">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="format" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Technical format of the resource. Free text. Use file extension or MIME type where possible, e.g. PDF, XML, MPG or application/pdf, text/xml, video/mpeg.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="sizes">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="size" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Size information about the resource.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="version" type="xs:string" minOccurs="0" maxOccurs="1">
+  <xs:annotation>
+    <xs:documentation>Version information about the resource.</xs:documentation>
+  </xs:annotation>
+</xs:element>
+
+<xs:element name="disciplines">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="discipline" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>The research discipline(s) the resource can be categorized in.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="spatialCoverage" type="xs:string" minOccurs="0" maxOccurs="1">
+  <xs:annotation>
+    <xs:documentation>The spatial coverage the research data itself is related to. Content of this category is displayed in plain text. If a longitude/latitude information is given it will be displayed on the map.</xs:documentation>
+  </xs:annotation>
+</xs:element>
+
+<xs:element name="temporalCoverage" type="xs:string" minOccurs="0" maxOccurs="1">
+  <xs:annotation>
+    <xs:documentation>Period of time the research data itself is related to. Could be a date format or plain text.</xs:documentation>
+  </xs:annotation>
+</xs:element>
