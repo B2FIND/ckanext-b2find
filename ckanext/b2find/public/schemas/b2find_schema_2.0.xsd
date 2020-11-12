@@ -260,3 +260,4 @@
     <xs:documentation>Period of time the research data itself is related to. Could be a date format or plain text.</xs:documentation>
   </xs:annotation>
 </xs:element>
+</xs:schema>
