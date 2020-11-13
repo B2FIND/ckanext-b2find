@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://b2find.eudat.eu/schema/b2f/2.0/"
+  xsi:schemaLocation="http://b2find.eudat.eu/schema/b2f/2.0 http://b2find.eudat.eu/schema/b2f/2.0/meta.xsd">
+  <titles>
+    <title>Test</title>
+    <title>Subtitle</title>
+  </titles>
+  <descriptions>
+    <description>just a test</description>
+  </descriptions>
+  <community>test</community>
+  <keywords>
+    <keyword>one</keyword>
+  </keywords>
+  <DOI>https://doi.org/123</DOI>
+  <PID>https://pid.org/123</PID>
+  <source>https://test.local/test_123</source>
+  <relatedIdentifiers>
+    <relatedIdentifier>http://test.local/images/test_123.png</relatedIdentifier>
+  </relatedIdentifiers>
+  <metadataAccess>http://oai.local/</metadataAccess>
+  <creators>
+    <creator>b2f creator</creator>
+  </creators>
+  <publishers>
+    <publisher>b2f pub</publisher>
+  </publishers>
+  <contributors>
+    <contributor>b2f contri</contributor>
+  </contributors>
+  <instruments>
+    <instrument>b2f instrument</instrument>
+  </instruments>
+  <publicationYear>2020</publicationYear>
+  <fundingReferences>
+    <fundingReference>b2f funds</fundingReference>
+  </fundingReferences>
+  <rightsList>
+    <rights>open access</rights>
+  </rightsList>
+  <openAccess>true</openAccess>
+  <contacts>
+    <contact>b2f contact</contact>
+  </contacts>
+  <languages>
+    <language>eng</language>
+  </languages>
+  <resourceTypes>
+    <resourceType>dont know</resourceType>
+  </resourceTypes>
+  <formats>
+    <format>pdf</format>
+  </formats>
+  <sizes>
+    <size>16 MB</size>
+  </sizes>
+  <version>2.0</version>
+  <disciplines>
+    <discipline>Social Sciences</discipline>
+  </disciplines>
+  <spatialCoverage>Hamburg</spatialCoverage>
+  <temporalCoverage>2020-11-11</temporalCoverage>
+</resource>
