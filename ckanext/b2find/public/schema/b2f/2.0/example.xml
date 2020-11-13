@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resource
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://b2find.eudat.eu/schema/b2f/2.0/"
+  xmlns="http://b2find.eudat.eu/schema/b2f/2.0"
   xsi:schemaLocation="http://b2find.eudat.eu/schema/b2f/2.0 http://b2find.eudat.eu/schema/b2f/2.0/meta.xsd">
   <titles>
     <title>Test</title>
